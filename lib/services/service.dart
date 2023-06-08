@@ -57,7 +57,7 @@ class Service {
     final url = Uri.parse('http://localhost:8080/api/auth/clientSignin');
     final headers = {'Content-Type': 'application/json'};
     final body = jsonEncode({
-      'email': emailController.text,
+      'username': emailController.text,
       'password': passwordController.text,
     });
 
@@ -66,11 +66,12 @@ class Service {
         .timeout(Duration(seconds: 10));
 
     if (response.statusCode == 200) {
+      Get.offAll(() => HomePage());
       print("requette a le status 200 dans ça marche");
       final responseData = jsonDecode(response.body);
       print("voici notre responseData");
       print(responseData);
-      final token = responseData['access_token'];
+      final token = responseData['accessToken'];
       print("voici notre token");
       print(token);
       //Store the token in shared preferences
@@ -79,9 +80,16 @@ class Service {
 
       // Decode the token and extract the role, accountId, and clientId
       Map<String, dynamic> decodedToken = JwtDecoder.decode(token);
-      String role = decodedToken['role'];
-      print("voici le role");
-      print(role);
+      String role="";
+      if (decodedToken.containsKey('roles')) {
+        List<dynamic> roles = decodedToken['roles'];
+        if (roles.isNotEmpty) {
+          String role = roles[0]; // Accéder au premier rôle de la liste
+          print("Voici le rôle : $role");
+        }
+      } else {
+        print("L'access token ne contient pas la clé 'roles'");
+      }
       //
 
       int clientId = decodedToken['id'];
