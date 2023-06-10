@@ -50,7 +50,7 @@ class RechargePage extends StatelessWidget {
                             String amount = '';
 
                             return AlertDialog(
-                              backgroundColor: Colors.blue[50],
+                              backgroundColor: Color.fromRGBO(88, 250, 96, 1),
                               title: Text("Recharge IAM"),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../services/service.dart';
 
 class ProfilePage extends StatelessWidget {
-  /*final service = Get.put(LoginService());*/
+  final service = Get.put(Service());
 
   @override
   Widget build(BuildContext context) {
@@ -223,8 +226,8 @@ class ProfilePage extends StatelessWidget {
                               children: [
                                 ElevatedButton(
                                     onPressed: () {
-                                      //Navigator.of(context)
-                                      //.pushNamed('/setting');
+                                      Navigator.of(context)
+                                          .pushNamed('/setting');
                                     },
                                     style: ElevatedButton.styleFrom(
                                         elevation: 0,
@@ -289,8 +292,7 @@ class ProfilePage extends StatelessWidget {
                               children: [
                                 ElevatedButton(
                                     onPressed: () {
-                                      // Navigator.of(context)
-                                      //.pushNamed('/notification');
+                                      Navigator.of(context).pushNamed('/home');
                                     },
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.transparent,
@@ -341,8 +343,9 @@ class ProfilePage extends StatelessWidget {
               child: Row(
                 children: [
                   ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/splash');
+                      onPressed: () async {
+                        //Navigator.of(context).pushNamed('/splash');
+                        await Service.logout();
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent,
@@ -352,7 +355,7 @@ class ProfilePage extends StatelessWidget {
                       child: Row(children: [
                         IconButton(
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/splash');
+                            //Navigator.of(context).pushNamed('/splash');
                           },
                           icon: Icon(
                             Icons.logout,

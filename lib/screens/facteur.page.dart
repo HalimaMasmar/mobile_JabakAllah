@@ -35,7 +35,59 @@ class FacteurPage extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 10),
                   child: Card(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            String phoneNumber = '';
+                            String amount = '';
+
+                            return AlertDialog(
+                              backgroundColor: Colors.blue[50],
+                              title: Text("Recharge IAM"),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextField(
+                                    onChanged: (value) {
+                                      phoneNumber = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "Numéro de téléphone mobile",
+                                    ),
+                                  ),
+                                  TextField(
+                                    onChanged: (value) {
+                                      amount = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "code  Secret",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    // Logique pour valider la recharge
+                                    // Utilisez les valeurs de phoneNumber et amount
+                                    //Navigator.pop(
+                                    //  context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Valider"),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(
+                                        context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Annuler"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
                       child: Padding(
                         padding: EdgeInsets.all(10),
                         child: Row(
@@ -64,8 +116,57 @@ class FacteurPage extends StatelessWidget {
                   child: Card(
                     child: InkWell(
                       onTap: () {
-                        // Action lorsque la Card est cliquée
-                        // Ajoutez ici la logique pour afficher la liste de promos
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            String phoneNumber = '';
+                            String amount = '';
+
+                            return AlertDialog(
+                              backgroundColor: Colors.blue[50],
+                              title: Text("Recharge IAM"),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextField(
+                                    onChanged: (value) {
+                                      phoneNumber = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "Numéro de téléphone mobile",
+                                    ),
+                                  ),
+                                  TextField(
+                                    onChanged: (value) {
+                                      amount = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "Code Secret ",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    // Logique pour valider la recharge
+                                    // Utilisez les valeurs de phoneNumber et amount
+                                    //Navigator.pop(
+                                    //  context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Valider"),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(
+                                        context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Annuler"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       },
                       child: Padding(
                         padding: EdgeInsets.all(10),
@@ -95,8 +196,57 @@ class FacteurPage extends StatelessWidget {
                   child: Card(
                     child: InkWell(
                       onTap: () {
-                        // Action lorsque la Card est cliquée
-                        // Ajoutez ici la logique pour afficher la liste de promos
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            String phoneNumber = '';
+                            String amount = '';
+
+                            return AlertDialog(
+                              backgroundColor: Colors.blue[50],
+                              title: Text("Recharge IAM"),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextField(
+                                    onChanged: (value) {
+                                      phoneNumber = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "Numéro de téléphone mobile",
+                                    ),
+                                  ),
+                                  TextField(
+                                    onChanged: (value) {
+                                      amount = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "Code secret",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    // Logique pour valider la recharge
+                                    // Utilisez les valeurs de phoneNumber et amount
+                                    //Navigator.pop(
+                                    //  context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Valider"),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(
+                                        context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Annuler"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       },
                       child: Padding(
                         padding: EdgeInsets.all(10),
@@ -136,8 +286,57 @@ class FacteurPage extends StatelessWidget {
                   child: Card(
                     child: InkWell(
                       onTap: () {
-                        // Action lorsque la Card est cliquée
-                        // Ajoutez ici la logique pour afficher la liste de promos
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            String phoneNumber = '';
+                            String amount = '';
+
+                            return AlertDialog(
+                              backgroundColor: Colors.blue[50],
+                              title: Text("Payer Facture"),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextField(
+                                    onChanged: (value) {
+                                      phoneNumber = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "Numéro de Facture",
+                                    ),
+                                  ),
+                                  TextField(
+                                    onChanged: (value) {
+                                      amount = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "Montant ",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    // Logique pour valider la recharge
+                                    // Utilisez les valeurs de phoneNumber et amount
+                                    //Navigator.pop(
+                                    //  context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Valider"),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(
+                                        context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Annuler"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       },
                       child: Padding(
                         padding: EdgeInsets.all(10),
@@ -168,8 +367,57 @@ class FacteurPage extends StatelessWidget {
                   child: Card(
                     child: InkWell(
                       onTap: () {
-                        // Action lorsque la Card est cliquée
-                        // Ajoutez ici la logique pour afficher la liste de promos
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            String phoneNumber = '';
+                            String amount = '';
+
+                            return AlertDialog(
+                              backgroundColor: Colors.blue[50],
+                              title: Text("Payer  Facture"),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextField(
+                                    onChanged: (value) {
+                                      phoneNumber = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "Numéro de facture",
+                                    ),
+                                  ),
+                                  TextField(
+                                    onChanged: (value) {
+                                      amount = value;
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: "Montant",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    // Logique pour valider la recharge
+                                    // Utilisez les valeurs de phoneNumber et amount
+                                    //Navigator.pop(
+                                    //  context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Valider"),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(
+                                        context); // Ferme la boîte de dialogue
+                                  },
+                                  child: Text("Annuler"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       },
                       child: Padding(
                         padding: EdgeInsets.all(10),

@@ -1,4 +1,3 @@
-import 'package:app_mobile/screens/registration.dart';
 import 'package:app_mobile/services/service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -97,14 +96,15 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
                     controller: serviceLogin.passwordController,
+                    obscureText: true,
                     decoration: InputDecoration(
-                      icon: new Icon(
-                        Icons.person,
+                      icon: Icon(
+                        Icons.remove_red_eye,
                         color: Colors.black,
                         size: 20,
                       ),
                       border: InputBorder.none,
-                      hintText: "demo@gmail.com",
+                      hintText: "password",
                       hintStyle: TextStyle(
                           fontSize: 15, fontWeight: FontWeight.normal),
                     ),

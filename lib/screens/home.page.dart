@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     Color color =
         Color(int.parse(hexColor.substring(1, 7), radix: 16) + 0xFF000000);
     return Scaffold(
-      backgroundColor: Colors.blue[50],
+      //backgroundColor: Colors.blue[50],
       appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.transparent,
@@ -47,27 +47,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ]),
-      /* floatingActionButton: Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(40), topRight: Radius.circular(40))),
-        child: FloatingActionButton(
-          //Floating action button on Scaffold
-          onPressed: () {
-            //Navigator.of(context).pushNamed('/cart');
-          },
-          backgroundColor: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.all(6),
-            child: Icon(
-              Icons.shopping_cart,
-              color: Colors.blueAccent,
-              size: 33,
-            ),
-          ), //icon inside button
-        ),
-      ),*/
 
       body: ListView(
         padding: EdgeInsets.all(16.0),
@@ -78,22 +57,56 @@ class _HomePageState extends State<HomePage> {
             style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
           ),
           Card(
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: ListTile(
               leading: Icon(
                 Icons.account_balance_wallet,
                 color: color,
+                size: 40,
               ),
               title: Text(
                 'Solde actuel',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
+                  fontSize: 16,
                 ),
               ),
-              subtitle: Text('Montant'),
-              trailing: Icon(Icons.arrow_forward),
-              onTap: () {
-                // Ajoutez ici la logique pour afficher les détails du solde
+              subtitle: Text(
+                'Votre montant est 20 000 DH',
+                style: TextStyle(
+                  fontSize: 14,
+                ),
+              ),
+              trailing: Icon(
+                Icons.arrow_forward,
+                size: 30,
+              ),
+              onTap: () async {
+                // Appelez la méthode de service pour récupérer le montant
+                //final montant = await HomeController.fetchBalance();
+
+                // Utilisez le montant récupéré comme vous le souhaitez
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Montant actuel'),
+                      content: Text('20 000 DH'),
+                      actions: [
+                        ElevatedButton(
+                          child: Text('Fermer'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
               },
             ),
           ),
@@ -107,6 +120,7 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(
                 Icons.phone_android,
                 color: color,
+                size: 40,
               ),
               title: Text(
                 'Recharge',
@@ -128,6 +142,7 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(
                 Icons.receipt,
                 color: color,
+                size: 40,
               ),
               title: Text(
                 'Paiement de factures',
